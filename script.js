@@ -30,7 +30,7 @@ if (document.getElementById('contact-form')) {
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault(); // Zabrání reloadu stránky
 
-        emailjs.sendForm("service_axcsunj", "template_8c9nd5s", this)
+        emailjs.sendForm("service_088u03w", "template_8c9nd5s", this)
             .then(() => {
                 alert("Zpráva byla úspěšně odeslána!");
             }, (error) => {
