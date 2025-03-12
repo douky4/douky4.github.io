@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontakt – Výrobky z paroží</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Nože</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
 </head>
 <body>
 <!-- NOVÁ BÍLÁ LIŠTA NAHOŘE -->
@@ -30,16 +31,19 @@
     </div>
   </div>
 </div>
+<!-- ====== HLAVIČKA S LOGEM A NAVIGACÍ ====== -->
 <header>
   <nav>
     <ul>
-      <!-- ORANŽOVÉ TLAČÍTKO V MENU: VYTVOŘIT TROFEJ -->
-      <li class="create-trofej-nav">
+       <!-- ORANŽOVÉ TLAČÍTKO V MENU: VYTVOŘIT TROFEJ -->
+       <li class="create-trofej-nav">
         <a href="kontakt.html" class="create-trofej-btn-nav">
           Chci vytvořit svou trofej
         </a>
       </li>
+      
       <li><a href="index.html">Domů</a></li>
+
       <li class="dropdown">
         <a href="trofeje.html">Trofeje</a>
         <ul class="dropdown-menu">
@@ -63,37 +67,14 @@
 </header>
 
 <main>
-  <h1>Kontakt</h1>
-  <p>Chcete si nechat vyrobit trofej z vašeho úlovku, nebo máte dotazy? Vyplňte formulář níže a přidejte fotku pro lepší představu.</p>
+  <h1>Nože</h1>
+  <p>Nože s rukojetí z paroží, různé zdobení... Prohlédněte si naši aktuální nabídku:</p>
 
-  <!-- FORMULÁŘ PRO POPTÁVKU -->
-  <form 
-    action="#" 
-    method="post" 
-    enctype="multipart/form-data" 
-    class="contact-form">
+      <img src="nuz1.jpg" alt="Nůž 1">
+      <img src="nuz2.jpg" alt="Nůž 2">
+      <img src="nuz3.jpg" alt="Nůž 3">
 
-    <label for="name">Jméno:</label>
-    <input type="text" id="name" name="name" placeholder="Vaše jméno" required />
-
-    <label for="email">E-mail:</label>
-    <input type="email" id="email" name="email" placeholder="vas@email.cz" required />
-
-    <label for="phone">Telefon (nepovinné):</label>
-    <input type="text" id="phone" name="phone" placeholder="+420 123 456 789" />
-
-    <label for="photo">Fotka úlovku:</label>
-    <input type="file" id="photo" name="photo" accept="image/*" />
-
-    <label for="message">Vaše poptávka / dotaz:</label>
-    <textarea id="message" name="message" rows="5" placeholder="Popište nám, co si přejete vyrobit..."></textarea>
-
-    <button type="submit">Odeslat poptávku</button>
-  </form>
-
-  <p>Nebo nám napište přímo: <strong>trofejeodkaci@seznam.cz</strong></p>
-  <p>Tel.: +420 720 208 418</p>
-  <p>Adresa: Sepekov 450, 398 51 Sepekov</p>
+  <p>Detailní popis, ceny, atd.</p>
 </main>
 <footer class="normal-footer">
   © 2025 Trofeje od Káči. Všechna práva vyhrazena.
