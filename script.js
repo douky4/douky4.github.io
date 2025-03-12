@@ -23,22 +23,27 @@ document.addEventListener('DOMContentLoaded', () => {
       setInterval(() => showSlide(index + 1), 5000);
   }
 
-  // EMAILJS - ODESLÁNÍ FORMULÁŘE
-document.addEventListener("DOMContentLoaded", function() {
-    emailjs.init("IFOtmBtku_1mu_vYD"); // Tvůj USER ID z EmailJS
+  // ✉️ EMAILJS - ODESLÁNÍ FORMULÁŘE
+    if (typeof emailjs !== "undefined") {
+        emailjs.init("IFOtmBtku_1mu_vYD"); // 🔑 Tvůj USER ID z EmailJS
+    } else {
+        console.error("❌ Chyba: EmailJS není načteno. Ujisti se, že máš správně vložený <script> v HTML.");
+    }
 
-    let form = document.getElementById('contact-form');
+    const form = document.getElementById('contact-form');
     if (form) {
         form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Zabrání reloadu stránky
+            event.preventDefault(); // 🚫 Zabrání reloadu stránky
 
             emailjs.sendForm("service_088u03w", "template_8c9nd5s", this)
                 .then(() => {
-                    alert("Zpráva byla úspěšně odeslána!");
-                }, (error) => {
-                    alert("Chyba při odesílání: " + JSON.stringify(error));
+                    alert("✅ Zpráva byla úspěšně odeslána!");
+                })
+                .catch((error) => {
+                    alert("❌ Chyba při odesílání: " + JSON.stringify(error));
                 });
         });
+    } else {
+        console.warn("⚠️ Formulář #contact-form nebyl nalezen na stránce.");
     }
 });
-
