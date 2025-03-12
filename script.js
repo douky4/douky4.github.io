@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // EMAILJS - ODESLÁNÍ FORMULÁŘE
 if (document.getElementById('contact-form')) {
-    emailjs.init("QDW_g6rg-ye_Iu1gfI"); // Tvůj USER ID z EmailJS
+    emailjs.init("QDW_g6rg-ye_Iu1gf"); // Tvůj USER ID z EmailJS
 
     document.getElementById('contact-form').addEventListener('submit', function(event) {
         event.preventDefault(); // Zabrání reloadu stránky
