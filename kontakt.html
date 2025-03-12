@@ -66,40 +66,41 @@
   <h1>Kontakt</h1>
   <p>Chcete si nechat vyrobit trofej z vašeho úlovku, nebo máte dotazy? Vyplňte formulář níže a přidejte fotku pro lepší představu.</p>
 
-  <!-- FORMULÁŘ PRO POPTÁVKU -->
-  <form 
+ <!-- FORMULÁŘ PRO POPTÁVKU -->
+<form 
     id="contact-form"  
     method="POST"
     enctype="multipart/form-data" 
     class="contact-form">
 
     <label for="name">Jméno:</label>
-    <input type="text" id="name" name="name" placeholder="Vaše jméno" required />
+    <input type="text" id="name" name="user_name" placeholder="Vaše jméno" required />
 
     <label for="email">E-mail:</label>
-    <input type="email" id="email" name="email" placeholder="vas@email.cz" required />
+    <input type="email" id="email" name="user_email" placeholder="vas@email.cz" required />
 
     <label for="phone">Telefon (nepovinné):</label>
-    <input type="text" id="phone" name="phone" placeholder="+420 123 456 789" />
+    <input type="text" id="phone" name="user_phone" placeholder="+420 123 456 789" />
 
     <label for="photo">Fotka úlovku:</label>
-    <input type="file" id="photo" name="photo" accept="image/*" />
+    <input type="file" id="photo" name="user_photo" accept="image/*" />
 
     <label for="message">Vaše poptávka / dotaz:</label>
-    <textarea id="message" name="message" rows="5" placeholder="Popište nám, co si přejete vyrobit..."></textarea>
+    <textarea id="message" name="user_message" rows="5" placeholder="Popište nám, co si přejete vyrobit..."></textarea>
 
     <button type="submit">Odeslat poptávku</button>
-  </form>
-  <!-- Načtení EmailJS knihovny -->
+</form>
+
+<!-- Načtení EmailJS knihovny (musí být před `js.html`) -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script src="js.html"></script> 
 
-  <p>Nebo nám napište přímo: <strong>trofejeodkaci@seznam.cz</strong></p>
-  <p>Tel.: +420 720 208 418</p>
-  <p>Adresa: Sepekov 450, 398 51 Sepekov</p>
-</main>
+<p>Nebo nám napište přímo: <strong>trofejeodkaci@seznam.cz</strong></p>
+<p>Tel.: +420 720 208 418</p>
+<p>Adresa: Sepekov 450, 398 51 Sepekov</p>
+
 <footer class="normal-footer">
-  © 2025 Trofeje od Káči. Všechna práva vyhrazena.
+    © 2025 Trofeje od Káči. Všechna práva vyhrazena.
 </footer>
 
 </body>
