@@ -47,4 +47,5 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         console.warn("⚠️ Formulář #contact-form nebyl nalezen na stránce.");
     }
+   console.log("✅ JS se načetl a spustil!");
 });
