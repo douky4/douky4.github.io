@@ -24,19 +24,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // EMAILJS - ODESLÁNÍ FORMULÁŘE
-  if (document.getElementById('contact-form')) {
-      emailjs.init("QDW_g6rg-ye_Iu1gf"); // Tvůj USER ID z EmailJS
+if (document.getElementById('contact-form')) {
+    emailjs.init("QDW_g6rg-ye_Iu1gfI"); // Tvůj USER ID z EmailJS
 
-      document.getElementById('contact-form').addEventListener('submit', function(event) {
-          event.preventDefault();
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Zabrání reloadu stránky
 
-          let formData = new FormData(this);
-          emailjs.sendForm("service_axcsunj", "template_8c9nd5s", this)
-              .then(() => {
-                  alert("Zpráva byla úspěšně odeslána!");
-              }, (error) => {
-                  alert("Chyba při odesílání: " + error.text);
-              });
-      });
-  }
-});
+        emailjs.sendForm("service_axcsunj", "template_8c9nd5s", this)
+            .then(() => {
+                alert("Zpráva byla úspěšně odeslána!");
+            }, (error) => {
+                alert("Chyba při odesílání: " + JSON.stringify(error));
+            });
+    });
+}
