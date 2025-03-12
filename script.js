@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setInterval(() => showSlide(index + 1), 5000);
   }
 
-  // ✉️ EMAILJS - ODESLÁNÍ FORMULÁŘE
+ document.addEventListener("DOMContentLoaded", function() {
     if (typeof emailjs !== "undefined") {
         emailjs.init("IFOtmBtku_1mu_vYD"); // 🔑 Tvůj USER ID z EmailJS
     } else {
@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             emailjs.sendForm("service_088u03w", "template_8c9nd5s", this)
                 .then(() => {
                     alert("✅ Zpráva byla úspěšně odeslána!");
+                    form.reset(); // Vyčistí formulář po odeslání
                 })
                 .catch((error) => {
                     alert("❌ Chyba při odesílání: " + JSON.stringify(error));
