@@ -204,6 +204,10 @@ nav ul li a:hover {
   display: none;
 }
 
+.dropdown-menu.show {
+  display: block;
+}
+
 /* CTA BUTTON */
 .create-trofej-nav {
   margin-left: 10px;
