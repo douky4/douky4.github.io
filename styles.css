@@ -594,3 +594,43 @@ body {
   font-size: 0.9rem;
   box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
 }
+
+.mobile-menu-button {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu-button {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    background-color: #29552b;
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+}
+
