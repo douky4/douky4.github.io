@@ -45,3 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
                   alert("❌ Chyba při odesílání: " + JSON.stringify(error));
               });
       });
+  } else {
+      console.warn("⚠️ Formulář #contact-form nebyl nalezen na stránce.");
+  }
+
+   // ======== MOBILNÍ MENU (HAMBURGER) =========
+const menuBtn = document.querySelector('.mobile-menu-button');
+const navList = document.querySelector('.menu');
+
+if (menuBtn && navList) {
+  menuBtn.addEventListener('click', () => {
+    navList.classList.toggle('show');
+  });
+} else {
+  console.warn("⚠️ Navigační prvky pro mobilní menu nebyly nalezeny.");
+}
+
+  console.log("✅ JS se načetl a spustil!");
+});
