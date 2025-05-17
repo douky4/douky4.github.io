@@ -49,10 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.warn("⚠️ Formulář #contact-form nebyl nalezen na stránce.");
   }
 
-  console.log("✅ JS se načetl a spustil!");
-});
-
- // ======== MOBILNÍ MENU (HAMBURGER) =========
+   // ======== MOBILNÍ MENU (HAMBURGER) =========
   const menuBtn = document.querySelector('.mobile-menu-button');
   const navList = document.querySelector('nav ul');
 
@@ -66,3 +63,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   console.log("✅ JS se načetl a spustil!");
 });
+
