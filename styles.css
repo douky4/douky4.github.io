@@ -155,14 +155,6 @@ main h1 {
     top: 0;
     z-index: 1000;
   }
-  @media (max-width: 768px) {
-    nav ul {
-      display: none; /* skryj klasické menu */
-    }
-    .mobile-menu-button {
-      display: block; /* zobraz hamburger */
-    }
-}
 /* ========== STICKY NAV ========== */
 header {
     background: #425a42;
