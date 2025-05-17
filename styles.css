@@ -159,9 +159,6 @@ main h1 {
     nav ul {
       display: none; /* skryj klasické menu */
     }
-    .mobile-menu-button {
-      display: block; /* zobraz hamburger */
-    }
 }
 /* ========== STICKY NAV ========== */
 header {
@@ -566,12 +563,6 @@ body {
   nav ul li {
     margin: 5px 0;
   }
-  
-  /* Pokud máš mobilní menu tlačítko, zobraz ho */
-  .mobile-menu-button {
-    display: block;
-  }
-  
   /* Úprava hero textu */
   .hero-text h1 {
     font-size: 1.8rem;
