@@ -51,3 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   console.log("✅ JS se načetl a spustil!");
 });
+
+ // ======== MOBILNÍ MENU (HAMBURGER) =========
+  const menuBtn = document.querySelector('.mobile-menu-button');
+  const navList = document.querySelector('nav ul');
+
+  if (menuBtn && navList) {
+    menuBtn.addEventListener('click', () => {
+      navList.classList.toggle('show');
+    });
+  } else {
+    console.warn("⚠️ Navigační prvky pro mobilní menu nebyly nalezeny.");
+  }
+
+  console.log("✅ JS se načetl a spustil!");
+});
