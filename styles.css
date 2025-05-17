@@ -638,3 +638,7 @@ body {
   }
 }
 
+nav {
+  position: relative; /* Toto opravuje zobrazení menu na mobilu */
+}
+
