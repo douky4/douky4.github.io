@@ -610,9 +610,13 @@ body {
     position: absolute;
     right: 20px;
     top: 10px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1001;
   }
 
-  nav ul {
+  .menu {
     display: none;
     flex-direction: column;
     align-items: flex-end;
@@ -625,11 +629,11 @@ body {
     z-index: 1000;
   }
 
-  nav ul.show {
+  .menu.show {
     display: flex;
   }
 
-  nav ul li {
+  .menu li {
     margin: 10px 0;
   }
 }
