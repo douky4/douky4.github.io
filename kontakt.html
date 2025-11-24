@@ -13,7 +13,9 @@
     <!-- Logo vlevo -->
     <div class="logo">
       <div class="logo-container">
-        <a href="index.html"><img src="Fotky\logo (2).png" alt="Logo" class="logo"></a>
+        <a href="index.html">
+          <img src="Fotky/logo (2).png" alt="Logo" class="logo">
+        </a>
       </div>
     </div>
     
@@ -30,6 +32,7 @@
     </div>
   </div>
 </div>
+
 <header>
   <nav>
     <ul>
@@ -55,8 +58,8 @@
           <li><a href="opasky.html">Opasky</a></li>
           <li><a href="doplnky-parozi.html">Doplňky z paroží</a></li>
         </ul>
-        <li><a href="pred-po.html">Před a Po</a></li>
       </li>
+      <li><a href="pred-po.html">Před a Po</a></li>
       <li><a href="kontakt.html">Kontakt</a></li>
     </ul>
   </nav>
@@ -64,10 +67,14 @@
 
 <main>
   <h1>Kontakt</h1>
-  <p>Chcete si nechat vyrobit trofej z vašeho úlovku, nebo máte dotazy? Vyplňte formulář níže a přidejte fotku pro lepší představu.</p>
+  <p>
+    Chcete si nechat vyrobit trofej z vašeho úlovku, nebo máte dotazy?
+    Vyplňte formulář níže. Menší fotku můžete přiložit pro lepší představu,
+    větší fotky nám prosím pošlete až v odpovědi na e-mail.
+  </p>
 
- <!-- FORMULÁŘ PRO POPTÁVKU -->
-<form 
+  <!-- FORMULÁŘ PRO POPTÁVKU -->
+  <form 
     id="contact-form"  
     method="POST"
     enctype="multipart/form-data" 
@@ -82,25 +89,28 @@
     <label for="phone">Telefon (nepovinné):</label>
     <input type="text" id="phone" name="user_phone" placeholder="+420 123 456 789" />
 
-    <label for="photo">Fotka úlovku:</label>
-    <input type="file" id="photo" name="user_photo" accept="image/*" />
+    <!-- POZOR: žádný name atribut -> EmailJS fotku neposílá, takže nepadá na limitu 50 kB -->
+    <label for="photo">Fotka úlovku (volitelné):</label>
+    <input type="file" id="photo" accept="image/*" />
 
     <label for="message">Vaše poptávka / dotaz:</label>
     <textarea id="message" name="user_message" rows="5" placeholder="Popište nám, co si přejete vyrobit..."></textarea>
 
     <button type="submit">Odeslat poptávku</button>
-</form>
+  </form>
 
-<!-- Načtení EmailJS knihovny (musí být před `js.html`) -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-<script src="script.js"></script> 
+  <!-- Načtení EmailJS knihovny (musí být před script.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <!-- Tvůj existující skript (carousel + EmailJS sendForm) -->
+  <script src="script.js"></script> 
 
-<p>Nebo nám napište přímo: <strong>trofejeodkaci@seznam.cz</strong></p>
-<p>Tel.: +420 720 208 418</p>
-<p>Adresa: Sepekov 450, 398 51 Sepekov</p>
+  <p>Nebo nám napište přímo: <strong>trofejeodkaci@seznam.cz</strong></p>
+  <p>Tel.: +420 720 208 418</p>
+  <p>Adresa: Sepekov 450, 398 51 Sepekov</p>
+</main>
 
 <footer class="normal-footer">
-    © 2025 Trofeje od Káči. Všechna práva vyhrazena.
+  © 2025 Trofeje od Káči. Všechna práva vyhrazena.
 </footer>
 
 </body>
