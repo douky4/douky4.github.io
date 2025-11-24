@@ -233,7 +233,7 @@ header {
   /* Overlay text */
   .hero-text {
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
@@ -585,3 +585,4 @@ body {
   font-size: 0.9rem;
   box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
 }
+
