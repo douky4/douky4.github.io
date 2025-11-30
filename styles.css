@@ -155,11 +155,6 @@ main h1 {
     top: 0;
     z-index: 1000;
   }
-  @media (max-width: 768px) {
-    nav ul {
-      display: none; /* skryj klasické menu */
-    }
-}
 /* ========== STICKY NAV ========== */
 header {
     background: #425a42;
@@ -586,24 +581,30 @@ body {
   box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
 }
 /* =========================================
-   MOBILNÍ VERZE – PŘIDEJ NA KONEC styles.css
+   MOBILNÍ VERZE – JEDNODUCHÉ NASTAVENÍ
    ========================================= */
 @media (max-width: 768px) {
 
-  /* Tělo stránky – menší odsazení pod fixními lištami */
-  body {
-    padding-top: 150px;
+  html, body {
+    overflow-x: hidden;
   }
 
-  /* Horní bílá lišta – menší a přehlednější */
+  /* Zrušíme velké odsazení pro fixní lišty */
+  body {
+    padding-top: 0;
+  }
+
+  /* Horní bílá lišta – na mobilu už NEBUDE fixní */
   .top-bar {
+    position: static;
     padding: 8px 12px;
   }
 
   .top-bar-container {
+    max-width: 100%;
+    padding-right: 0;
     flex-direction: column;
     align-items: flex-start;
-    padding-right: 0;
   }
 
   .logo img {
@@ -617,38 +618,45 @@ body {
     font-size: 0.9rem;
   }
 
-  /* Navigace – NESKRÝVAT ji na mobilu, jen zmenšit */
+  /* Navigace – taky už NEfixní, jen normálně nad obsahem */
+  header {
+    position: static;
+    box-shadow: none;
+    padding: 6px 0;
+  }
+
   nav ul {
     display: flex !important;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: center;
     gap: 4px;
+    margin: 0;
+    padding: 4px 0;
+  }
+
+  nav ul li {
+    margin: 0;
   }
 
   nav ul li a {
-    padding: 6px 8px;
-    font-size: 0.8rem;
+    padding: 6px 10px;
+    font-size: 0.85rem;
   }
 
-  header {
-    top: 105px; /* níž pod menší top bar */
-    padding: 6px 4px;
-  }
-
-  /* Hlavní carousel – menší výška na mobilu */
+  /* Hlavní carousel – menší výška, ať nezabere celý mobil */
   .carousel {
-    height: 65vh;
+    height: 60vh;
   }
 
   .carousel img {
-    height: 65vh;
+    height: 60vh;
   }
 
-  /* Hero text na fotce – menší a užší */
   .hero-text {
-    top: 40%;
-    padding: 10px;
+    top: 50%;
+    transform: translate(-50%, -50%);
     max-width: 90%;
+    padding: 10px;
   }
 
   .hero-text h1 {
@@ -657,7 +665,7 @@ body {
   }
 
   .hero-text p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     margin-bottom: 0.8em;
   }
 
@@ -669,14 +677,7 @@ body {
     font-size: 1rem;
   }
 
-  /* H2 obecně – na mobilu menší a bez podtržení */
-  h2 {
-    font-size: 1.4rem;
-    text-decoration: none;
-    text-transform: none;
-  }
-
-  /* Sekce Před a Po – fotky pod sebe */
+  /* Před a Po – fotky pod sebe */
   .before-after {
     flex-direction: column;
     align-items: center;
@@ -686,9 +687,9 @@ body {
     max-width: 100%;
   }
 
-  /* Galerie produktů – 2 sloupce */
+  /* Galerie produktů – dva sloupce */
   .product-gallery figure {
-    width: 45%;
+    width: 46%;
     height: auto;
   }
 
@@ -697,6 +698,11 @@ body {
     max-width: 100%;
     padding: 0 10px;
   }
+
+  /* H2 na mobilu menší a bez podtržení */
+  h2 {
+    font-size: 1.4rem;
+    text-decoration: none;
+    text-transform: none;
+  }
 }
-
-
