@@ -158,7 +158,7 @@ main {
 /* ===== CAROUSEL (hlavní) ===== */
 .carousel {
   width: 100vw;
-  height: 80vh;
+  height: 75vh;
   position: relative;
   overflow: hidden;
 }
@@ -173,7 +173,7 @@ main {
 
 .carousel img {
   width: 100vw;
-  height: 80vh;
+  height: 75vh;
   object-fit: cover;
   filter: brightness(0.7);
 }
@@ -414,32 +414,35 @@ h2 {
 /* =========================================
    MOBILNÍ VERZE
    ========================================= */
-/* =========================================
-   MOBILNÍ VERZE
-   ========================================= */
 @media (max-width: 768px) {
 
-  /* menší horní lišta */
+  /* horní lišta – VŠE V JEDNOM ŘÁDKU */
   .top-bar {
-    padding: 6px 10px;
+    padding: 6px 8px;
   }
 
   .top-bar-container {
     max-width: 100%;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
   }
 
   .logo img {
-    height: 50px;
+    height: 40px;
   }
 
   .contact {
-    flex-direction: column;
-    align-items: flex-start;
-    font-size: 0.85rem;
-    gap: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.75rem;
+    white-space: nowrap; /* email + tel na jednom řádku */
+  }
+
+  .instagram-icon img {
+    height: 20px;
   }
 
   header {
@@ -451,7 +454,7 @@ h2 {
     display: none;
   }
 
-  /* menu – menší a na víc řádků */
+  /* menu – menší a může jít na 2 řádky */
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
@@ -464,25 +467,24 @@ h2 {
     font-size: 0.78rem;
   }
 
-  /* carousel trochu menší na výšku */
+  /* carousel a hero text – menší a níž, aby byl celý vidět */
   .carousel,
   .carousel img {
     height: 60vh;
   }
 
-  /* hero text – menší a kompaktnější */
   .hero-text {
-    top: 45%;
-    max-width: 92%;
+    top: 60%;
+    max-width: 90%;
     padding: 8px 10px;
   }
 
   .hero-text h1 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .hero-text p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     margin-bottom: 0.6em;
   }
 
@@ -534,4 +536,3 @@ header,
 body {
   padding-top: 0 !important;
 }
-
