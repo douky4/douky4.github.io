@@ -585,4 +585,118 @@ body {
   font-size: 0.9rem;
   box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
 }
+/* =========================================
+   MOBILNÍ VERZE – PŘIDEJ NA KONEC styles.css
+   ========================================= */
+@media (max-width: 768px) {
+
+  /* Tělo stránky – menší odsazení pod fixními lištami */
+  body {
+    padding-top: 150px;
+  }
+
+  /* Horní bílá lišta – menší a přehlednější */
+  .top-bar {
+    padding: 8px 12px;
+  }
+
+  .top-bar-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 0;
+  }
+
+  .logo img {
+    height: 60px;
+  }
+
+  .contact {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    font-size: 0.9rem;
+  }
+
+  /* Navigace – NESKRÝVAT ji na mobilu, jen zmenšit */
+  nav ul {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 4px;
+  }
+
+  nav ul li a {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
+
+  header {
+    top: 105px; /* níž pod menší top bar */
+    padding: 6px 4px;
+  }
+
+  /* Hlavní carousel – menší výška na mobilu */
+  .carousel {
+    height: 65vh;
+  }
+
+  .carousel img {
+    height: 65vh;
+  }
+
+  /* Hero text na fotce – menší a užší */
+  .hero-text {
+    top: 40%;
+    padding: 10px;
+    max-width: 90%;
+  }
+
+  .hero-text h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.4em;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+    margin-bottom: 0.8em;
+  }
+
+  .btn-cta {
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 10px 12px;
+    font-size: 1rem;
+  }
+
+  /* H2 obecně – na mobilu menší a bez podtržení */
+  h2 {
+    font-size: 1.4rem;
+    text-decoration: none;
+    text-transform: none;
+  }
+
+  /* Sekce Před a Po – fotky pod sebe */
+  .before-after {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img-container img {
+    max-width: 100%;
+  }
+
+  /* Galerie produktů – 2 sloupce */
+  .product-gallery figure {
+    width: 45%;
+    height: auto;
+  }
+
+  /* Formulář – přes celou šířku */
+  .contact-form {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+
 
