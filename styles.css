@@ -416,7 +416,7 @@ h2 {
    ========================================= */
 @media (max-width: 768px) {
 
-  /* horní lišta – vše v jednom řádku, logo větší */
+  /* horní lišta – logo vlevo, text vpravo v jednom řádku */
   .top-bar {
     padding: 6px 8px;
     display: flex;
@@ -432,7 +432,7 @@ h2 {
   }
 
   .logo img {
-    height: 60px; /* větší logo */
+    height: 60px; /* trochu větší logo, ale ne přes celé */
   }
 
   .contact {
@@ -443,8 +443,19 @@ h2 {
     white-space: nowrap; /* email + tel na jednom řádku */
   }
 
+  /* Instagram jako plovoucí kulaté tlačítko vpravo dole */
+  .instagram-icon {
+    position: fixed;
+    bottom: 18px;
+    right: 18px;
+    z-index: 2000;
+  }
+
   .instagram-icon img {
-    height: 20px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
   }
 
   header {
@@ -456,7 +467,7 @@ h2 {
     display: none;
   }
 
-  /* menu – menší, může jít na 2 řádky */
+  /* menu – menší, klidně na 2 řádky */
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
@@ -476,18 +487,18 @@ h2 {
   }
 
   .hero-text {
-    top: 68%;          /* POSUNUTO NÍŽE */
+    top: 75%;              /* POSUNUTO JEŠTĚ NÍŽE */
     max-width: 90%;
     padding: 8px 10px;
   }
 
   .hero-text h1 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .hero-text p {
-    font-size: 0.95rem;
-    margin-bottom: 0.6em;
+    font-size: 0.9rem;
+    margin-bottom: 0.5em;
   }
 
   .btn-cta {
@@ -538,3 +549,4 @@ header,
 body {
   padding-top: 0 !important;
 }
+
