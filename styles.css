@@ -416,11 +416,11 @@ h2 {
    ========================================= */
 @media (max-width: 768px) {
 
-  /* horní lišta – vše v jednom řádku */
+  /* horní lišta – vše v jednom řádku, logo větší */
   .top-bar {
     padding: 6px 8px;
     display: flex;
-    align-items: center;       /* logo + text vertikálně na střed */
+    align-items: center;
   }
 
   .top-bar-container {
@@ -432,7 +432,7 @@ h2 {
   }
 
   .logo img {
-    height: 55px;              /* větší logo */
+    height: 60px; /* větší logo */
   }
 
   .contact {
@@ -440,7 +440,7 @@ h2 {
     align-items: center;
     gap: 6px;
     font-size: 0.75rem;
-    white-space: nowrap;       /* email + tel na jednom řádku */
+    white-space: nowrap; /* email + tel na jednom řádku */
   }
 
   .instagram-icon img {
@@ -456,7 +456,7 @@ h2 {
     display: none;
   }
 
-  /* menu – menší a může jít na 2 řádky */
+  /* menu – menší, může jít na 2 řádky */
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
@@ -476,7 +476,7 @@ h2 {
   }
 
   .hero-text {
-    top: 65%;                  /* POSUNUTO NÍŽE */
+    top: 68%;          /* POSUNUTO NÍŽE */
     max-width: 90%;
     padding: 8px 10px;
   }
@@ -522,6 +522,7 @@ h2 {
   h2 {
     font-size: 1.4rem;
   }
+}
 
 /* === TVRDÝ RESET POZICOVÁNÍ HLAVIČKY NA MOBILU I DESKTOPU === */
 header,
@@ -537,4 +538,3 @@ header,
 body {
   padding-top: 0 !important;
 }
-
