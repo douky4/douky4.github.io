@@ -75,7 +75,7 @@
   </p>
 
   <!-- FORMULÁŘ PRO POPTÁVKU -->
-  <!-- FORMULÁŘ PRO POPTÁVKU -->
+  <  <!-- FORMULÁŘ PRO POPTÁVKU -->
 <form 
     id="contact-form"  
     method="POST"
@@ -91,7 +91,7 @@
     <label for="phone">Telefon (povinné):</label>
     <input type="text" id="phone" name="phone" placeholder="+420 123 456 789" required />
 
-    <label for="photo">Fotka úlovku <em>(nepovinné)</em>:</label>
+    <label for="photo">Fotka úlovku <em>(nepovinné, max. cca 50 kB)</em>:</label>
     <input type="file" id="photo" name="photo" accept="image/*" />
 
     <label for="message">Vaše poptávka / dotaz:</label>
@@ -100,40 +100,49 @@
     <button type="submit">Odeslat poptávku</button>
 </form>
 
-  <!-- EmailJS knihovna -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // stejné údaje jako máš v script.js
-      emailjs.init("IFOtmBtku_1mu_vYD");
+<!-- EmailJS knihovna -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // stejné údaje jako v EmailJS (Account → API keys + Services + Templates)
+    emailjs.init("IFOtmBtku_1mu_vYD");           // PUBLIC KEY / User ID
 
-      const form = document.getElementById('contact-form');
+    const form = document.getElementById('contact-form');
 
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
 
-        emailjs.sendForm("service_088u03w", "template_8c9nd5s", this)
-          .then(function () {
-            alert("✅ Zpráva byla úspěšně odeslána!");
-            form.reset();
-          })
-          .catch(function (error) {
-            console.error("EmailJS error:", error);
-            alert("❌ Došlo k chybě při odesílání. Napište prosím přímo na trofejeodkaci@seznam.cz.");
-          });
-      });
+      emailjs.sendForm("service_088u03w", "template_8c9nd5s", this)
+        .then(function () {
+          alert("✅ Zpráva byla úspěšně odeslána!");
+          form.reset();
+        })
+        .catch(function (error) {
+          console.error("EmailJS error:", error);
+
+          // přívětivější hlášky podle typu chyby
+          if (error && error.status === 413) {
+            alert("❌ Soubor je příliš velký. Zkuste prosím menší fotku (EmailJS limit je cca 50 kB).");
+          } else if (error && error.status === 401) {
+            alert("❌ Chyba autorizace. Zkontroluj v EmailJS public key, Service ID a Template ID.");
+          } else {
+            alert("❌ Došlo k chybě při odesílání (" +
+                  (error && error.status ? error.status : "??") + "): " +
+                  (error && error.text ? error.text : "zkontroluj prosím nastavení EmailJS."));
+          }
+        });
     });
-  </script>
+  });
+</script>
 
-  <p>Nebo nám napište přímo: <strong>trofejeodkaci@seznam.cz</strong></p>
-  <p>Tel.: +420 720 208 418</p>
-  <p>Adresa: Sepekov 450, 398 51 Sepekov</p>
+<p>Nebo nám napište přímo: <strong>trofejeodkaci@seznam.cz</strong></p>
+<p>Tel.: +420 720 208 418</p>
+<p>Adresa: Sepekov 450, 398 51 Sepekov</p>
 </main>
 
 <footer class="normal-footer">
   © 2025 Trofeje od Káči. Všechna práva vyhrazena.
 </footer>
-
 </body>
 </html>
 
