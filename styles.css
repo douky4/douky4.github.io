@@ -1,70 +1,111 @@
-/* ===== Reset + Font import ===== */
+/* ===== Reset + font ===== */
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
 html, body {
   margin: 0;
   padding: 0;
-  font-family: 'Lora', serif; /* Myslivecký dojem */
+  font-family: 'Lora', serif;
   background-color: #f5f5f5;
+  overflow-x: hidden;
 }
 
-/* ====== HLAVIČKA, LOGO, NAVIGACE ====== */
-header {
-  background: #2f4f2f; /* tmavší zelená */
+/* ===== TOP BAR ===== */
+.top-bar {
+  width: 100%;
+  background-color: #fff;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 10px 20px;
 }
 
-.logo-container {
-  height: 50px; /* Zachová výšku lišty */
+.top-bar-container {
+  max-width: 1200px;
+  width: 100%;
   display: flex;
-  align-items: center; /* Vycentruje logo vertikálně */
+  justify-content: space-between;
+  align-items: center;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo img,
 .logo {
   height: 80px;
   width: auto;
   cursor: pointer;
-  max-height: 100px;
 }
 
-/* NAVIGACE */
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.contact a {
+  text-decoration: none;
+  color: #000;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+.instagram-icon img {
+  height: 26px;
+  width: auto;
+}
+
+/* ===== HEADER + NAV ===== */
+header {
+  width: 100%;
+  background: #29552b;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 nav ul {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 8px 10px;
   display: flex;
-  justify-content: flex-end; /* Zarovnání menu vpravo */
-  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 6px;
 }
 
-
 nav ul li {
-  position: relative; /* kvůli dropdownu */
-  margin: 0 10px;
+  position: relative;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  padding: 10px 15px;
-  transition: background-color 0.2s ease;
+  padding: 8px 12px;
   display: block;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
 }
 
 nav ul li a:hover {
-  background-color: #446b44; /* světlejší zelená */
+  background-color: #446b44;
 }
 
-/* ====== MODERNĚJŠÍ DROPDOWN ====== */
+/* dropdown */
 .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
   left: 0;
-  background-color: #3b5b3b; /* mírně světlejší */
+  background-color: #3b5b3b;
   min-width: 180px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.2);
   border-radius: 4px;
@@ -72,251 +113,24 @@ nav ul li a:hover {
   padding: 5px 0;
 }
 
-/* Zůstanou otevřené, když jsi nad li nebo samotným menu */
 .dropdown:hover .dropdown-menu,
 .dropdown-menu:hover {
   display: block;
 }
 
 .dropdown-menu li a {
-  padding: 8px 15px;
-  white-space: nowrap; /* aby se text nezalomil */
+  white-space: nowrap;
 }
 
-.dropdown-menu li a:hover {
-  background-color: #557f55;
-}
-
-/* ====== OBSAH ====== */
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-main h1 {
-  margin-top: 20px;
-}
-
-.uvod {
-  text-align: center;
-  margin-top: 20px;
-}
-/* Subcategories row (např. Trofeje: Jelení, Dančí, Srnčí) */
-/* Podkategorie – nyní zarovnané doleva */
-.subcategories {
-    display: flex;
-    gap: 15px;
-    margin: 15px 0;
-  }
-  
-  .subcat-link {
-    background-color: #444;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    transition: background-color 0.2s;
-  }
-  
-  .subcat-link:hover {
-    background-color: #666;
-  }
-  
-  /* Galerie produktů */
-  .product-gallery {
-    display: flex;
-    flex-wrap: wrap; /* aby se zalamovaly do dalšího řádku */
-    gap: 20px;
-    justify-content: center; /* vycentrováno */
-    margin-top: 20px;
-  }
-  
-  /* Každý produkt = figure s obrázkem + popisek */
-  .product-gallery figure {
-    width: 200px; /* klidně uprav */
-    text-align: center; 
-  }
-  
-  .product-gallery figure img {
-    width: 100%; 
-    height: auto;
-    object-fit: cover;
-    border: 2px solid #ccc; /* rámeček */
-    border-radius: 6px; /* mírné zaoblení */
-  }
-  
-  .product-gallery figcaption {
-    margin-top: 5px;
-    font-style: italic; /* popisek kurzívou */
-  }
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-  }
-/* ========== STICKY NAV ========== */
-header {
-    background: #425a42;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-  
-    /* Nové vlastnosti: sticky nav */
-    position: sticky;
-    top: 0;
-    z-index: 999; /* aby se držela nav vždy nahoře nad obsahem */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.3); /* jemný stín u hlavičky */
-  }
-  
- /* Karusel */
-.carousel {
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-  }
-  .carousel-container {
-    display: flex;
-    width: 300%;
-    height: 100%;
-    transition: transform 1s ease-in-out;
-    z-index: 1; /* nižší než hero-text */
-  }
-  .carousel img {
-    width: 100vw;
-    height: 100vh;
-    object-fit: cover;
-    filter: brightness(0.7); /* mírně ztmavit */
-  }
-  .carousel-controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-  }
-  
-  .carousel-controls button {
-    background-color: rgba(0,0,0,0.5);
-    color: #fff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-  }
-  .carousel-slide {
-    width: 70vw;
-    height: 70vh;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  }  
-  
-  .carousel-slide img {
-    max-width: 70vw; /* Můžeš upravit podle potřeby */
-    max-height: 70vh;
-    object-fit: contain; /* Zachová původní poměr stran */
-    border-radius: 10px; /* Přidá zaoblené rohy */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Přidá jemný stín */
-  }
-  
-  
-  /* Overlay text */
-  .hero-text {
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    text-align: center;
-    text-shadow: 0 2px 5px rgba(0,0,0,0.8);
-    z-index: 2; /* text je nad obrázky */
-  
-    background: rgba(0, 0, 0, 0.4); /* poloprůhledné pozadí */
-    padding: 20px;
-    border-radius: 4px;
-    max-width: 80%;
-  }
-  .hero-text h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5em;
-  }
-  .hero-text p {
-    font-size: 1.2rem;
-    margin-bottom: 1em;
-  }
-    
-  .btn-cta {
-    display: inline-block;
-    background-color: #ffa500; /* kontrastní barva (např. oranžová) */
-    color: #fff;
-    padding: 12px 20px;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: background-color 0.2s ease;
-  }
-  .btn-cta:hover {
-    background-color: #ffb733;
-  }
-  
-  /* ========== LEHKÁ ANIMACE NA GALERII ========== */
-  .product-gallery figure img {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .product-gallery figure:hover img {
-    transform: scale(1.05);   /* mírné přiblížení */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3); /* trošku stínu navíc */
-  }
-  
-  /* ========== SUBKATEGORIE: BOX-SHADOW ========== */
-  .subcategories {
-    display: flex;
-    gap: 15px;
-    margin: 15px 0;
-    /* default: zarovnání dle potřeby (flex-start or center) */
-  }
-  .subcat-link {
-    background-color: #444;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 15px;
-    border-radius: 4px;
-    transition: background-color 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* jemný stín */
-  }
-  .subcat-link:hover {
-    background-color: #666;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-  }
-  
-  /* ========== PÁR DOPLŇKŮ K VZHLEDU ========== */
-  /* Např. pro main sekci, margin, atd. */
-  main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .uvod {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
- /* Oranžové tlačítko v menu */
+/* oranžové tlačítko v navigaci */
 .create-trofej-nav {
-  margin-left: 10px; /* trocha mezery, aby nebylo nalepené na \"Domů\" */
+  margin-right: auto;
 }
 
-/* Samotné tlačítko (odkaz) */
 .create-trofej-btn-nav {
   background-color: #ff9900;
   color: #fff;
-  padding: 10px 15px;
+  padding: 8px 12px;
   border-radius: 4px;
   text-decoration: none;
   font-weight: bold;
@@ -324,28 +138,202 @@ header {
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-/* Hover efekt */
 .create-trofej-btn-nav:hover {
   background-color: #ffb547;
   transform: translateY(-2px);
 }
+
+/* ===== MAIN LAYOUT ===== */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.uvod {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* ===== CAROUSEL (hlavní) ===== */
+.carousel {
+  width: 100vw;
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 1s ease-in-out;
+  z-index: 1;
+}
+
+.carousel img {
+  width: 100vw;
+  height: 80vh;
+  object-fit: cover;
+  filter: brightness(0.7);
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+
+.carousel-controls button {
+  background-color: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* overlay text */
+.hero-text {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 4px;
+  max-width: 80%;
+}
+
+.hero-text h1 {
+  font-size: 2.3rem;
+  margin-bottom: 0.5em;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1em;
+}
+
+.btn-cta {
+  display: inline-block;
+  background-color: #ffa500;
+  color: #fff;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.btn-cta:hover {
+  background-color: #ffb733;
+}
+
+/* ===== Před a Po – sekce + carousel ===== */
+.before-after {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+
+.img-container {
+  text-align: center;
+}
+
+.img-container img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+}
+
+.caption {
+  margin-top: 5px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* ===== Galerie produktů ===== */
+.subcategories {
+  display: flex;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.subcat-link {
+  background-color: #444;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.subcat-link:hover {
+  background-color: #666;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.product-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.product-gallery figure {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.product-gallery figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-gallery figure:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.product-gallery figcaption {
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* ===== H2 – obecně ===== */
 h2 {
   text-align: center;
   color: #0c4008;
-  font-size: 2.5rem; /* Větší písmo */
-  font-weight: bold; /* Tučné */
-  text-transform: uppercase; /* Velká písmena */
-  text-decoration: underline; /* Podtržení */
+  font-size: 2rem;
+  font-weight: bold;
 }
-/*****************************************************
- * STYL FORMULÁŘE
- *****************************************************/
- .contact-form {
-  max-width: 500px; /* šířka formuláře */
-  margin: 20px auto; 
+
+/* ===== FORMULÁŘ ===== */
+.contact-form {
+  max-width: 500px;
+  margin: 20px auto;
   display: flex;
-  flex-direction: column; /* každý label/input pod sebou */
-  gap: 10px; /* mezery mezi prvky */
+  flex-direction: column;
+  gap: 10px;
 }
 
 .contact-form label {
@@ -360,11 +348,11 @@ h2 {
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
-  width: 100%; 
+  width: 100%;
 }
 
 .contact-form button {
-  background-color: #2f4f2f; /* tmavě zelená, můžeš změnit */
+  background-color: #2f4f2f;
   color: #fff;
   padding: 10px 15px;
   border: none;
@@ -377,234 +365,61 @@ h2 {
 }
 
 .contact-form button:hover {
-  background-color: #446b44; 
+  background-color: #446b44;
 }
 
-/*****************************************************
- * FIXNÍ IKONA INSTAGRAMU
- *****************************************************/
+/* ===== Instagram fixní ikonka (pokud ji použiješ) ===== */
 .ig-fixed {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 9999; 
+  z-index: 9999;
   display: inline-block;
 }
 
 .ig-fixed img {
-  width: 40px;  /* uprav podle potřeby */
+  width: 40px;
   height: auto;
   transition: transform 0.2s ease;
 }
 
 .ig-fixed img:hover {
-  transform: scale(1.1); /* mírné zvětšení najetím myší */
-}
-.before-after {
-  display: flex;
-  gap: 20px; /* mezera mezi fotkami */
-  margin-bottom: 40px; /* mezera pod sekcí */
-  justify-content: center; /* aby byly fotky uprostřed, pokud chceš */
+  transform: scale(1.1);
 }
 
-.img-container {
-  text-align: center; /* zarovnání popisku na střed */
+/* ===== Jak to probíhá – seznam ===== */
+.proces-kroky {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.img-container img {
-  width: 100%; 
-  max-width: 350px; /* uprav si, jak chceš mít velké fotky */
-  height: auto;
-  border: 2px solid #ccc;
-  border-radius: 6px;
+.proces-list {
+  padding-left: 20px;
 }
 
-.caption {
-  margin-top: 5px;
-  font-weight: bold;
-  font-style: italic; 
-}
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* skryje horizontální scrollbar */
-  box-sizing: border-box;
-}
-.product-gallery {
-  display: flex;         /* nebo grid, to je na tobě */
-  flex-wrap: wrap;       /* aby se zalamovaly */
-  gap: 20px;             /* mezera */
+.proces-list li {
+  margin-bottom: 8px;
 }
 
-.product-gallery figure {
-  width: 200px;          /* jednotná šířka */
-  height: 200px;         /* jednotná výška */
-  overflow: hidden;      /* skryje přesahující část fotky */
-  border: 2px solid #ccc;
-  border-radius: 6px;
-  text-align: center;
-}
-
-.product-gallery figure img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;     /* fotku vyplní, ale ořízne */
-}
-/* ------------------- */
-/* HORNÍ BÍLÁ LIŠTA (FIXNÍ) */
-/* ------------------- */
-.top-bar {
-  width: 100%;
-  background-color: #fff;
-  display: flex;
-  align-items: center; /* Logo a kontakty budou na výšku uprostřed */
-  justify-content: space-between;
-  padding: 20px 30px; /* Výška lišty */
-  position: fixed; /* Zafixování lišty při scrollování */
-  top: 0; /* Přilepení k hornímu okraji */
-  left: 0;
-  z-index: 1000; /* Ujistí se, že je lišta vždy navrchu */
-}
-
-/* Logo zarovnané úplně doleva */
-.logo {
-  display: flex;
-  align-items: center; /* Vertikálně na střed */
-  margin-right: auto; /* Posune kontakty úplně doprava */
-}
-
-/* Velikost loga */
-.logo img {
-  height: 100px; /* Zvětšeno dle požadavku */
-  max-height: 120px;
-  width: auto;
-}
-
-/* Kontejner pro kontakty */
-.top-bar-container {
-  max-width: 1200px;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center; /* Kontakty na výšku na střed */
-  padding-right: 30px;
-}
-
-/* Kontakt vpravo */
-.contact {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-/* Odkaz na e-mail */
-.contact a {
-  text-decoration: none;
-  color: #000;
-}
-
-.contact a:hover {
-  text-decoration: underline;
-}
-
-/* Instagram ikona */
-.instagram-icon img {
-  height: 30px;
-  width: auto;
-  vertical-align: middle;
-}
-/* ------------------- */
-/* NAVIGAČNÍ LIŠTA (FIXNÍ) */
-/* ------------------- */
-
-header {
-  width: 100%;
-  position: fixed; /* Zafixování navigace */
-  top: 120px; /* Nastavení pod horní bílou lištu (výšku lišty uprav podle potřeby) */
-  left: 0;
-  background-color: #29552b; /* Barva pozadí navigace */
-  z-index: 999; /* Aby byla pod bílou lištou */
-  display: flex;
-  justify-content: flex-end; /* Posune vše doprava */
-  padding: 10px 5px;
-}
-
-/* Uprav obsah stránky, aby nezačínal pod lištami */
-body {
-  padding-top: 180px; /* Odsazení obsahu, aby nezačínal pod fixními lištami */
-}
-@media (max-width: 768px) {
-  /* Upravit odsazení, aby se obsah nepřekrýval fixními lištami */
-  body {
-    padding-top: 160px;
-  }
-  
-  /* Zmenšení top baru */
-  .top-bar {
-    padding: 15px 20px;
-  }
-  .logo img {
-    height: 70px;
-  }
-  
-  /* Úprava navigace – vertikální menu, případně hamburger */
-  nav ul {
-    flex-direction: column;
-    align-items: flex-end;
-  }
-  
-  nav ul li {
-    margin: 5px 0;
-  }
-  /* Úprava hero textu */
-  .hero-text h1 {
-    font-size: 1.8rem;
-  }
-  .hero-text p {
-    font-size: 1rem;
-  }
-  
-  /* Galerie – figure se zobrazí ve 2 sloupcích */
-  .product-gallery figure {
-    width: 45%;
-    max-width: 300px;
-  }
-}
+/* ===== FOOTER ===== */
 .normal-footer {
-  background-color: #2f4f2f; /* tmavě zelená */
+  background-color: #2f4f2f;
   color: #fff;
   text-align: center;
   padding: 10px;
   font-size: 0.9rem;
   box-shadow: 0 -2px 5px rgba(0,0,0,0.3);
 }
+
 /* =========================================
-   MOBILNÍ VERZE – JEDNODUCHÉ NASTAVENÍ
+   MOBILNÍ VERZE
    ========================================= */
 @media (max-width: 768px) {
 
-  html, body {
-    overflow-x: hidden;
-  }
-
-  /* Zrušíme velké odsazení pro fixní lišty */
-  body {
-    padding-top: 0;
-  }
-
-  /* Horní bílá lišta – na mobilu už NEBUDE fixní */
-  .top-bar {
-    position: static;
-    padding: 8px 12px;
-  }
-
   .top-bar-container {
-    max-width: 100%;
-    padding-right: 0;
     flex-direction: column;
     align-items: flex-start;
+    gap: 4px;
   }
 
   .logo img {
@@ -614,70 +429,50 @@ body {
   .contact {
     flex-direction: column;
     align-items: flex-start;
-    gap: 2px;
     font-size: 0.9rem;
   }
 
-  /* Navigace – taky už NEfixní, jen normálně nad obsahem */
   header {
-    position: static;
-    box-shadow: none;
-    padding: 6px 0;
+    padding: 0;
   }
 
   nav ul {
-    display: flex !important;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 6px 4px;
     gap: 4px;
-    margin: 0;
-    padding: 4px 0;
-  }
-
-  nav ul li {
-    margin: 0;
   }
 
   nav ul li a {
-    padding: 6px 10px;
-    font-size: 0.85rem;
+    padding: 6px 8px;
+    font-size: 0.8rem;
   }
 
-  /* Hlavní carousel – menší výška, ať nezabere celý mobil */
-  .carousel {
-    height: 60vh;
-  }
-
+  .carousel,
   .carousel img {
     height: 60vh;
   }
 
   .hero-text {
     top: 50%;
-    transform: translate(-50%, -50%);
     max-width: 90%;
     padding: 10px;
   }
 
   .hero-text h1 {
     font-size: 1.6rem;
-    margin-bottom: 0.4em;
   }
 
   .hero-text p {
     font-size: 1rem;
-    margin-bottom: 0.8em;
   }
 
   .btn-cta {
     width: 100%;
     box-sizing: border-box;
-    text-align: center;
-    padding: 10px 12px;
     font-size: 1rem;
   }
 
-  /* Před a Po – fotky pod sebe */
   .before-after {
     flex-direction: column;
     align-items: center;
@@ -687,22 +482,17 @@ body {
     max-width: 100%;
   }
 
-  /* Galerie produktů – dva sloupce */
   .product-gallery figure {
     width: 46%;
     height: auto;
   }
 
-  /* Formulář – přes celou šířku */
   .contact-form {
     max-width: 100%;
     padding: 0 10px;
   }
 
-  /* H2 na mobilu menší a bez podtržení */
   h2 {
     font-size: 1.4rem;
-    text-decoration: none;
-    text-transform: none;
   }
 }
