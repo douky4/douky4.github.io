@@ -436,6 +436,11 @@ h2 {
     padding: 0;
   }
 
+  /* NA MOBILU SCHOVÁME VELKÉ ORANŽOVÉ TLAČÍTKO Z MENU */
+  .create-trofej-nav {
+    display: none;
+  }
+
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
@@ -495,4 +500,19 @@ h2 {
   h2 {
     font-size: 1.4rem;
   }
+}
+
+/* === TVRDÝ RESET POZICOVÁNÍ HLAVIČKY NA MOBILU I DESKTOPU === */
+header,
+.top-bar {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  z-index: auto !important;
+}
+
+/* ŽÁDNÉ ODSAZENÍ TĚLA KVŮLI FIXNÍ HLAVIČCE */
+body {
+  padding-top: 0 !important;
 }
