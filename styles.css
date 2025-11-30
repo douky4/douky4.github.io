@@ -414,70 +414,86 @@ h2 {
 /* =========================================
    MOBILNÍ VERZE
    ========================================= */
+/* =========================================
+   MOBILNÍ VERZE
+   ========================================= */
 @media (max-width: 768px) {
 
+  /* menší horní lišta */
+  .top-bar {
+    padding: 6px 10px;
+  }
+
   .top-bar-container {
+    max-width: 100%;
     flex-direction: column;
     align-items: flex-start;
-    gap: 4px;
+    gap: 2px;
   }
 
   .logo img {
-    height: 60px;
+    height: 50px;
   }
 
   .contact {
     flex-direction: column;
     align-items: flex-start;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    gap: 0;
   }
 
   header {
     padding: 0;
   }
 
-  /* NA MOBILU SCHOVÁME VELKÉ ORANŽOVÉ TLAČÍTKO Z MENU */
+  /* na mobilu schováme velké oranžové tlačítko v menu */
   .create-trofej-nav {
     display: none;
   }
 
+  /* menu – menší a na víc řádků */
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
-    padding: 6px 4px;
-    gap: 4px;
+    padding: 4px 2px;
+    gap: 3px;
   }
 
   nav ul li a {
-    padding: 6px 8px;
-    font-size: 0.8rem;
+    padding: 4px 6px;
+    font-size: 0.78rem;
   }
 
+  /* carousel trochu menší na výšku */
   .carousel,
   .carousel img {
     height: 60vh;
   }
 
+  /* hero text – menší a kompaktnější */
   .hero-text {
-    top: 50%;
-    max-width: 90%;
-    padding: 10px;
+    top: 45%;
+    max-width: 92%;
+    padding: 8px 10px;
   }
 
   .hero-text h1 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   .hero-text p {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.6em;
   }
 
   .btn-cta {
     width: 100%;
     box-sizing: border-box;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    padding: 8px 10px;
   }
 
+  /* Před a Po – fotky pod sebe */
   .before-after {
     flex-direction: column;
     align-items: center;
@@ -487,11 +503,13 @@ h2 {
     max-width: 100%;
   }
 
+  /* galerie – dva sloupce */
   .product-gallery figure {
     width: 46%;
     height: auto;
   }
 
+  /* formulář přes šířku */
   .contact-form {
     max-width: 100%;
     padding: 0 10px;
@@ -516,3 +534,4 @@ header,
 body {
   padding-top: 0 !important;
 }
+
