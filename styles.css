@@ -436,11 +436,18 @@ h2 {
   }
 
   .contact {
+    display: flex;
     flex-direction: row;
+    flex-wrap: wrap;          /* dovolí zalomení */
+    justify-content: flex-end;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
     font-size: 0.75rem;
-    white-space: nowrap; /* email + tel na jednom řádku */
+    white-space: normal;      /* může se lámat na dva řádky */
+    text-align: right;
+    max-width: 75vw;          /* aby to nelezlo pod logo */
+  }
+
   }
 
   /* Instagram jako plovoucí kulaté tlačítko vpravo dole */
@@ -549,4 +556,5 @@ header,
 body {
   padding-top: 0 !important;
 }
+
 
