@@ -1,6 +1,10 @@
 /* ===== Reset + font ===== */
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -9,22 +13,21 @@ html, body {
   overflow-x: hidden;
 }
 
-/* ===== TOP BAR ===== */
+/* ===== TOP BAR (logo + kontakt) ===== */
 .top-bar {
   width: 100%;
   background-color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
 }
 
 .top-bar-container {
   max-width: 1200px;
-  width: 100%;
+  margin: 0 auto;
+  padding: 8px 16px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .logo-container {
@@ -41,10 +44,13 @@ html, body {
 
 .contact {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   font-size: 1rem;
   font-weight: 600;
+  text-align: right;
 }
 
 .contact a {
@@ -75,11 +81,11 @@ nav {
 nav ul {
   list-style: none;
   margin: 0;
-  padding: 8px 10px;
+  padding: 8px 16px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
 }
 
 nav ul li {
@@ -122,7 +128,7 @@ nav ul li a:hover {
   white-space: nowrap;
 }
 
-/* oranžové tlačítko v navigaci */
+/* oranžové tlačítko v navigaci (desktop) */
 .create-trofej-nav {
   margin-right: auto;
 }
@@ -147,7 +153,8 @@ nav ul li a:hover {
 main {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 20px 16px 40px;
+  background-color: #f5f5f5;
 }
 
 .uvod {
@@ -196,7 +203,7 @@ main {
   cursor: pointer;
 }
 
-/* overlay text */
+/* overlay text v carouselu */
 .hero-text {
   position: absolute;
   top: 35%;
@@ -266,6 +273,7 @@ main {
 /* ===== Galerie produktů ===== */
 .subcategories {
   display: flex;
+  flex-wrap: wrap;
   gap: 15px;
   margin: 15px 0;
 }
@@ -319,7 +327,7 @@ main {
   font-style: italic;
 }
 
-/* ===== H2 – obecně ===== */
+/* ===== Nadpisy H2 ===== */
 h2 {
   text-align: center;
   color: #0c4008;
@@ -343,7 +351,6 @@ h2 {
 .contact-form input[type="text"],
 .contact-form input[type="email"],
 .contact-form input[type="url"],
-.contact-form input[type="file"],
 .contact-form textarea {
   padding: 8px;
   font-size: 1rem;
@@ -367,25 +374,6 @@ h2 {
 
 .contact-form button:hover {
   background-color: #446b44;
-}
-
-/* ===== Instagram fixní ikonka (nepoužívá se, ale necháváme) ===== */
-.ig-fixed {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 9999;
-  display: inline-block;
-}
-
-.ig-fixed img {
-  width: 40px;
-  height: auto;
-  transition: transform 0.2s ease;
-}
-
-.ig-fixed img:hover {
-  transform: scale(1.1);
 }
 
 /* ===== Jak to probíhá – seznam ===== */
@@ -417,19 +405,11 @@ h2 {
    ========================================= */
 @media (max-width: 768px) {
 
-  /* horní lišta */
-  .top-bar {
-    padding: 6px 8px;
-    display: flex;
-    align-items: center;
-  }
-
+  /* horní lišta – logo nahoře, kontakt pod ním */
   .top-bar-container {
-    max-width: 100%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
   }
 
   .logo img {
@@ -437,53 +417,26 @@ h2 {
   }
 
   .contact {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;          /* dovolí zalomení */
-    justify-content: flex-end;
-    align-items: center;
-    gap: 4px;
-    font-size: 0.75rem;
-    white-space: normal;      /* může se lámat na dva řádky */
-    text-align: right;
-    max-width: 75vw;          /* aby to nelezlo pod logo */
+    justify-content: flex-start;
+    text-align: left;
+    font-size: 0.85rem;
   }
 
-  /* Instagram jako plovoucí kulaté tlačítko vpravo dole */
-  .instagram-icon {
-    position: fixed;
-    bottom: 18px;
-    right: 18px;
-    z-index: 2000;
-  }
-
-  .instagram-icon img {
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
-  }
-
-  header {
-    padding: 0;
-  }
-
-  /* na mobilu schováme oranžové tlačítko v menu */
+  /* v navigaci schováme oranžové tlačítko (už máš tlačítko v hero) */
   .create-trofej-nav {
     display: none;
   }
 
-  /* menu – menší, může být na 2 řádky */
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
-    padding: 4px 2px;
-    gap: 3px;
+    padding: 6px 8px;
+    gap: 6px;
   }
 
   nav ul li a {
-    padding: 4px 6px;
-    font-size: 0.78rem;
+    padding: 6px 8px;
+    font-size: 0.8rem;
   }
 
   .carousel,
@@ -492,18 +445,18 @@ h2 {
   }
 
   .hero-text {
-    top: 75%;              /* posunuto níže, aby bylo vše vidět */
+    top: 70%;
     max-width: 90%;
-    padding: 8px 10px;
+    padding: 10px;
   }
 
   .hero-text h1 {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
   }
 
   .hero-text p {
-    font-size: 0.9rem;
-    margin-bottom: 0.5em;
+    font-size: 1rem;
+    margin-bottom: 0.6em;
   }
 
   .btn-cta {
@@ -535,19 +488,4 @@ h2 {
   h2 {
     font-size: 1.4rem;
   }
-}
-
-/* === TVRDÝ RESET POZICOVÁNÍ HLAVIČKY NA MOBILU I DESKTOPU === */
-header,
-.top-bar {
-  position: static !important;
-  top: auto !important;
-  left: auto !important;
-  right: auto !important;
-  z-index: auto !important;
-}
-
-/* ŽÁDNÉ ODSAZENÍ TĚLA KVŮLI FIXNÍ HLAVIČCE */
-body {
-  padding-top: 0 !important;
 }
