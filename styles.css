@@ -60,19 +60,6 @@ html, body {
   height: 26px;
   width: auto;
 }
-/* Společné styly pro IG + WhatsApp ikony */
-.social-icons {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.instagram-icon img,
-.whatsapp-icon img {
-  height: 26px;
-  width: auto;
-}
-
 
 /* ===== HEADER + NAV ===== */
 header {
@@ -171,7 +158,7 @@ main {
 /* ===== CAROUSEL (hlavní) ===== */
 .carousel {
   width: 100vw;
-  height: 75vh;
+  height: 80vh;
   position: relative;
   overflow: hidden;
 }
@@ -186,7 +173,7 @@ main {
 
 .carousel img {
   width: 100vw;
-  height: 75vh;
+  height: 80vh;
   object-fit: cover;
   filter: brightness(0.7);
 }
@@ -250,7 +237,7 @@ main {
   background-color: #ffb733;
 }
 
-/* ===== Před a Po – sekce + carousel ===== */
+/* ===== Před a Po – sekce ===== */
 .before-after {
   display: flex;
   gap: 20px;
@@ -355,6 +342,7 @@ h2 {
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
+.contact-form input[type="url"],
 .contact-form input[type="file"],
 .contact-form textarea {
   padding: 8px;
@@ -381,7 +369,7 @@ h2 {
   background-color: #446b44;
 }
 
-/* ===== Instagram fixní ikonka (pokud ji použiješ) ===== */
+/* ===== Instagram fixní ikonka (nepoužívá se, ale necháváme) ===== */
 .ig-fixed {
   position: fixed;
   bottom: 20px;
@@ -429,7 +417,7 @@ h2 {
    ========================================= */
 @media (max-width: 768px) {
 
-  /* horní lišta – logo vlevo, text vpravo v jednom řádku */
+  /* horní lišta */
   .top-bar {
     padding: 6px 8px;
     display: flex;
@@ -438,14 +426,14 @@ h2 {
 
   .top-bar-container {
     max-width: 100%;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
     gap: 8px;
   }
 
   .logo img {
-    height: 60px; /* trochu větší logo, ale ne přes celé */
+    height: 60px;
   }
 
   .contact {
@@ -461,37 +449,31 @@ h2 {
     max-width: 75vw;          /* aby to nelezlo pod logo */
   }
 
-  }
-
-   /* Plovoucí IG + WhatsApp tlačítka vpravo dole na mobilu */
-  .social-icons {
+  /* Instagram jako plovoucí kulaté tlačítko vpravo dole */
+  .instagram-icon {
     position: fixed;
     bottom: 18px;
     right: 18px;
     z-index: 2000;
-    display: flex;
-    flex-direction: row;   /* pod sebou, můžeš dát row pro vedle sebe */
-    gap: 10px;
   }
 
-  .social-icons a img {
+  .instagram-icon img {
     height: 40px;
     width: 40px;
     border-radius: 50%;
     box-shadow: 0 2px 6px rgba(0,0,0,0.4);
   }
 
-
   header {
     padding: 0;
   }
 
-  /* na mobilu schováme velké oranžové tlačítko v menu */
+  /* na mobilu schováme oranžové tlačítko v menu */
   .create-trofej-nav {
     display: none;
   }
 
-  /* menu – menší, klidně na 2 řádky */
+  /* menu – menší, může být na 2 řádky */
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
@@ -504,14 +486,13 @@ h2 {
     font-size: 0.78rem;
   }
 
-  /* carousel a hero text – niž, aby byl celý vidět */
   .carousel,
   .carousel img {
     height: 60vh;
   }
 
   .hero-text {
-    top: 75%;              /* POSUNUTO JEŠTĚ NÍŽE */
+    top: 75%;              /* posunuto níže, aby bylo vše vidět */
     max-width: 90%;
     padding: 8px 10px;
   }
@@ -532,7 +513,6 @@ h2 {
     padding: 8px 10px;
   }
 
-  /* Před a Po – fotky pod sebe */
   .before-after {
     flex-direction: column;
     align-items: center;
@@ -542,13 +522,11 @@ h2 {
     max-width: 100%;
   }
 
-  /* galerie – dva sloupce */
   .product-gallery figure {
     width: 46%;
     height: auto;
   }
 
-  /* formulář přes šířku */
   .contact-form {
     max-width: 100%;
     padding: 0 10px;
@@ -573,7 +551,3 @@ header,
 body {
   padding-top: 0 !important;
 }
-
-
-
-
