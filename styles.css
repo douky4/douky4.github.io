@@ -513,7 +513,35 @@ h2 {
   .floating-instagram {
     right: 76px;
   }
+  /* malé obdélníčky WA + IG v horní liště */
+.social-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+  margin-left: 6px;
+  border-radius: 999px;        /* zaoblené okraje */
+  background-color: #f5f5f5;   /* světlé pozadí */
+  border: 1px solid #ccc;
 }
 
+.social-pill img {
+  height: 16px;                /* výška ikony přibližně jako text */
+  width: auto;
+  display: block;
 }
+
+/* na mobilu je jen trochu přitáhneme k textu */
+@media (max-width: 768px) {
+  .social-pill {
+    margin-left: 4px;
+    padding: 1px 5px;
+  }
+
+  .social-pill img {
+    height: 14px;
+  }
+}
+
+
 
