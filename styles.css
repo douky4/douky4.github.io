@@ -60,6 +60,19 @@ html, body {
   height: 26px;
   width: auto;
 }
+/* Společné styly pro IG + WhatsApp ikony */
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.instagram-icon img,
+.whatsapp-icon img {
+  height: 26px;
+  width: auto;
+}
+
 
 /* ===== HEADER + NAV ===== */
 header {
@@ -450,20 +463,24 @@ h2 {
 
   }
 
-  /* Instagram jako plovoucí kulaté tlačítko vpravo dole */
-  .instagram-icon {
+   /* Plovoucí IG + WhatsApp tlačítka vpravo dole na mobilu */
+  .social-icons {
     position: fixed;
     bottom: 18px;
     right: 18px;
     z-index: 2000;
+    display: flex;
+    flex-direction: row;   /* pod sebou, můžeš dát row pro vedle sebe */
+    gap: 10px;
   }
 
-  .instagram-icon img {
+  .social-icons a img {
     height: 40px;
     width: 40px;
     border-radius: 50%;
     box-shadow: 0 2px 6px rgba(0,0,0,0.4);
   }
+
 
   header {
     padding: 0;
@@ -556,5 +573,6 @@ header,
 body {
   padding-top: 0 !important;
 }
+
 
 
