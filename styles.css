@@ -379,7 +379,7 @@ h2 {
   .img-container img {
     max-width: 100%;
   }
-  /* ===== PLOVOUCÍ IKONY WA + IG ===== */
+/* ===== PLOVOUCÍ IKONY WA + IG ===== */
 .floating-social {
   position: fixed;
   right: 12px;
@@ -394,16 +394,21 @@ h2 {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background-color: #ffffff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  overflow: hidden;           /* ořízne roh obrázku do kruhu */
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.35);
+  background: transparent;    /* žádný bílý kruh navíc */
+  padding: 0;
 }
 
 .floating-btn img {
-  width: 24px;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;         /* aby byl obrázek kulatý */
+  display: block;
 }
 
 /* Na mobilu o trochu menší */
@@ -412,6 +417,9 @@ h2 {
     width: 38px;
     height: 38px;
   }
+}
+
+  }
 
   .floating-btn img {
     width: 20px;
@@ -419,4 +427,5 @@ h2 {
 }
 
 }
+
 
