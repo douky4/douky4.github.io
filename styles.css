@@ -488,4 +488,32 @@ h2 {
   h2 {
     font-size: 1.4rem;
   }
+  /* ===== Plovoucí ikony WhatsApp + Instagram ===== */
+@media (max-width: 768px) {
+  .floating-icon {
+    position: fixed;
+    bottom: 18px;
+    z-index: 2000;
+    display: inline-block;
+  }
+
+  .floating-icon img {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  }
+
+  /* WhatsApp úplně vpravo */
+  .floating-whatsapp {
+    right: 18px;
+  }
+
+  /* Instagram kousek vlevo od WhatsAppu */
+  .floating-instagram {
+    right: 76px;
+  }
 }
+
+}
+
