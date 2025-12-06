@@ -438,7 +438,7 @@ h2 {
 
   .top-bar-container {
     max-width: 100%;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     gap: 8px;
@@ -573,6 +573,7 @@ header,
 body {
   padding-top: 0 !important;
 }
+
 
 
 
