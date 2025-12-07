@@ -8,19 +8,18 @@
   <script defer src="script.js"></script>
 </head>
 <body>
-
-  <!-- NOVÁ BÍLÁ LIŠTA NAHOŘE -->
+  <!-- HORNÍ BÍLÁ LIŠTA -->
   <div class="top-bar">
     <div class="top-bar-container">
 
-      <!-- logo vlevo -->
+      <!-- Logo vlevo -->
       <div class="logo">
         <a href="index.html">
           <img src="Fotky/logo (2).png" alt="Trofeje od Káči">
         </a>
       </div>
 
-      <!-- kontakt + malé WA/IG vpravo -->
+      <!-- Kontakt + malé WA/IG vpravo -->
       <div class="contact">
         <a href="mailto:trofejeodkaci@seznam.cz">trofejeodkaci@seznam.cz</a>
         <span>|</span>
@@ -44,6 +43,7 @@
     </div>
   </div>
 
+  <!-- ZELENÁ NAVIGACE -->
   <header>
     <nav>
       <ul>
@@ -53,16 +53,12 @@
             Chci vytvořit svou trofej
           </a>
         </li>
-        <li><a href="index.html">Domů</a></li>
-        <li class="dropdown">
-          <a href="trofeje.html">Trofeje</a>
-         <ul class="subcategories">
-  <li><a href="jeleni.html" class="subcat-link">Jelení trofeje</a></li>
-  <li><a href="danci.html"  class="subcat-link">Dančí trofeje</a></li>
-  <li><a href="srnci.html"  class="subcat-link">Srnčí trofeje</a></li>
-</ul>
 
-        </li>
+        <li><a href="index.html">Domů</a></li>
+
+        <!-- UŽ BEZ DROPDOWNU – JEN ODKAZ TROFEJE -->
+        <li><a href="trofeje.html">Trofeje</a></li>
+
         <li class="dropdown">
           <a href="lovecke-doplnky.html">Lovecké doplňky</a>
           <ul class="dropdown-menu">
@@ -78,6 +74,7 @@
     </nav>
   </header>
 
+  <!-- OBSAH STRÁNKY -->
   <main>
     <h1>Trofeje</h1>
     <p>
@@ -85,19 +82,19 @@
       Vyberte si z podkategorií nebo prohlédněte galerii!
     </p>
 
-    <!-- MENU PODKATEGORIÍ – OBDÉLNÍKY -->
-    <ul class="subcategories">
-      <li><a href="jeleni.html" class="subcat-link">Jelení trofeje</a></li>
-      <li><a href="danci.html" class="subcat-link">Dančí trofeje</a></li>
-      <li><a href="srnci.html" class="subcat-link">Srnčí trofeje</a></li>
-    </ul>
+    <!-- TADY ZŮSTÁVAJÍ PODKATEGORIE V OBDÉLNÍCÍCH -->
+    <div class="subcategories">
+      <a href="jeleni.html" class="subcat-link">Jelení trofeje</a>
+      <a href="danci.html" class="subcat-link">Dančí trofeje</a>
+      <a href="srnci.html" class="subcat-link">Srnčí trofeje</a>
+    </div>
 
     <h2>Naše nejnovější kousky</h2>
 
     <section class="product-gallery">
       <figure>
         <figcaption>Jelení trofej – bělení lebky</figcaption>
-        <img src="Fotky/Jelen/bc335455-251f-4735-b28e-34e94306cb64.jpg" alt="Jelení trofej – bělení lebky">
+        <img src="Fotky/Jelen/bc335455-251f-4735-b28e-34e94306cb64.jpg" alt="Jelení trofej">
       </figure>
 
       <figure>
@@ -107,11 +104,9 @@
 
       <figure>
         <figcaption>Srnčí trofej – kompletní úprava</figcaption>
-        <img src="Fotky/karusel_1.jpg" alt="Srnčí trofej – kompletní úprava">
+        <img src="Fotky/karusel_1.jpg" alt="Srnčí trofej">
       </figure>
     </section>
-    <!-- případně další trofeje... -->
-
   </main>
 
   <footer class="normal-footer">
@@ -120,4 +115,3 @@
 
 </body>
 </html>
-
