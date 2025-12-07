@@ -379,6 +379,13 @@ h2 {
   .img-container img {
     max-width: 100%;
   }
+
+  .contact-form {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
+
 /* ===== PLOVOUCÍ IKONY WA + IG ===== */
 .floating-social {
   position: fixed;
@@ -411,14 +418,15 @@ h2 {
   display: block;
 }
 
-/* Na mobilu o trochu menší */
+/* Na mobilu menší plovoucí ikony */
 @media (max-width: 768px) {
   .floating-btn {
     width: 38px;
     height: 38px;
   }
-  }
-  /* ===== Galerie produktů – responzivní mřížka ===== */
+}
+
+/* ===== Galerie produktů – responzivní mřížka ===== */
 .product-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -458,6 +466,7 @@ h2 {
     max-width: 100%;
   }
 }
+
 /*****************************************************
  * STYL FORMULÁŘE – JEDEN SLOUPEC
  *****************************************************/
@@ -507,21 +516,14 @@ h2 {
   background-color: #446b44;
 }
 
-/* Na mobilu trochu víc prostoru od okrajů */
-@media (max-width: 768px) {
-  .contact-form {
-    max-width: 100%;
-    padding: 0 10px;
-  }
-}
 /* --- Podkategorie trofejí (Jelení / Dančí / Srnčí) --- */
 .subcategories {
   display: flex;
-  flex-wrap: wrap;       /* na mobilu se mohou zalomit */
+  flex-wrap: wrap;   /* na mobilu se mohou zalomit */
   gap: 10px;
   margin: 20px 0;
   padding: 0;
-  list-style: none;      /* zruší tečky */
+  list-style: none;  /* zruší tečky */
 }
 
 .subcategories li {
@@ -544,17 +546,3 @@ h2 {
   background-color: #3b6f3b;
   transform: translateY(-1px);
 }
-
-
-  .floating-btn img {
-    width: 20px;
-  }
-}
-
-}
-
-
-
-
-
-
