@@ -514,6 +514,36 @@ h2 {
     padding: 0 10px;
   }
 }
+/* --- Podkategorie trofejí (Jelení / Dančí / Srnčí) --- */
+.subcategories {
+  display: flex;
+  flex-wrap: wrap;       /* na mobilu se mohou zalomit */
+  gap: 10px;
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;      /* zruší tečky */
+}
+
+.subcategories li {
+  margin: 0;
+}
+
+.subcat-link {
+  display: inline-block;
+  background-color: #29552b;   /* zelený obdélník */
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 1px solid #1b3a1c;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.subcat-link:hover {
+  background-color: #3b6f3b;
+  transform: translateY(-1px);
+}
 
 
   .floating-btn img {
@@ -522,6 +552,7 @@ h2 {
 }
 
 }
+
 
 
 
